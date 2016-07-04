@@ -18,3 +18,7 @@ Assuming you're running the most up-to-date OSX version.
 6. run `bundle install` - shouldn't see any errors when doing this
 7. run `./deploy.sh`
 8. Check the changes at https://your_github_username.github.io/subscriptions-rest-api-docs
+
+## Before running `deploy.sh` ##
+
+Before you run the deploy script, keep in mind that the script will default to deploying to the remote repo set to origin. To get around this, please set your remote `origin` to your forked copy and `prospress` as the Prospress repository: `git remote set-url origin git@github.com:USERNAME/subscriptions-rest-api-docs.git`
