@@ -255,13 +255,13 @@ html, body {
     &:active, &:focus, &:hover {
       background-color: $lang-select-pressed-bg;
       color: $lang-select-pressed-text;
-      border-top-color: #9B5C8F;
+      border-top-color: #00BA8A; // Prospress dark green
     }
 
     &.active {
       background-color: $lang-select-active-bg;
       color: $lang-select-active-text;
-      border-top-color: #9B5C8F;
+      border-top-color: #00BA8A; // Prospress dark green
     }
   }
 
