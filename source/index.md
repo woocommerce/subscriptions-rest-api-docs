@@ -10,11 +10,11 @@ language_tabs:
 
 toc_footers:
   - <a href="https://github.com/prospress/subscriptions-rest-api-docs">Contributing to WCS REST API Docs</a>
-  - <a href="https://github.com/woothemes/woocommerce-rest-api-docs">Contributing to WC REST API Docs</a>
-  - <a href="https://github.com/woothemes/woocommerce/tree/master/includes/api">WC REST API Source on GitHub</a>
-  - <a href="https://github.com/woothemes/woocommerce/issues?labels=API&amp;page=1&amp;state=open">WC REST API Issues</a>
-  - <a href="https://docs.woothemes.com/documentation/plugins/subscriptions/">Subscriptions Documentation</a>
-  - <a href="https://github.com/woothemes/woocommerce">WooCommerce Subscriptions</a>
+  - <a href="https://github.com/woocommerce/woocommerce-rest-api-docs">Contributing to WC REST API Docs</a>
+  - <a href="https://github.com/woocommerce/woocommerce/tree/master/includes/api">WC REST API Source on GitHub</a>
+  - <a href="https://github.com/woocommerce/woocommerce/issues?labels=API&amp;page=1&amp;state=open">WC REST API Issues</a>
+  - <a href="https://docs.woocommerce.com/documentation/plugins/subscriptions/">Subscriptions Documentation</a>
+  - <a href="https://github.com/woocommerce/woocommerce">WooCommerce Subscriptions</a>
   - <a href="http://github.com/tripit/slate">Documentation Powered by Slate</a>
 
 includes:
