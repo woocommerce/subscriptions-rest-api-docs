@@ -1,8 +1,8 @@
-# Subscription orders #
+# Subscription Orders #
 
 The subscription orders API endpoints allows you to view orders related to a subscription.
 
-## Subscription order properties ##
+## Subscription Order Properties ##
 
 |       Attribute        |    Type   |                                                                             Description                                                                              |
 |------------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -105,7 +105,7 @@ The subscription orders API endpoints allows you to view orders related to a sub
 | `discount`     | string  | Discount total. <i class="label label-info">required</i>      |
 | `discount_tax` | string  | Discount total tax. <i class="label label-info">read-only</i> |
 
-## Retrieve subscription orders ##
+## Retrieve Subscription Orders ##
 
 This API lets you retrieve and view related orders for a specific subscription.
 

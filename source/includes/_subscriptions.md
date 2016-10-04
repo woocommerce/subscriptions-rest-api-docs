@@ -2,7 +2,7 @@
 
 The Subscriptions API allows you to create, view, update, and delete individual, or a batch, of subscriptions.
 
-## Subscription properties ##
+## Subscription Properties ##
 
 |       Attribute        |    Type   |                                                                             Description                                                                              |
 |------------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -578,7 +578,7 @@ woocommerce.post("subscriptions", data).parsed_response
 }
 ```
 
-## Retrieve a subscription ##
+## Retrieve a Subscription ##
 
 This API lets you retrieve and view a specific subscription.
 
@@ -785,7 +785,7 @@ woocommerce.get("subscriptions/251").parsed_response
 |-----------|--------|---------------------------------------------------|
 | `dp`      | string | Number of decimal points to use in each resource. |
 
-## List all subscriptions ##
+## List all Subscriptions ##
 
 This API helps you to view all the subscriptions.
 
@@ -1308,7 +1308,7 @@ woocommerce.put("subscriptions/30", data).parsed_response
 }
 ```
 
-## Delete a subscription ##
+## Delete a Subscription ##
 
 This API helps you delete a subscription.
 
@@ -1482,7 +1482,7 @@ woocommerce.delete("subscriptions/22", force: true).parsed_response
 |-----------|--------|--------------------------------------------------------------------------------|
 | `force`   | string | Use `true` whether to permanently delete the subscription, Default is `false`. |
 
-## Batch update subscriptions ##
+## Batch Update Subscriptions ##
 
 This API helps you to batch create, update and delete multiple subscriptions.
 
@@ -2612,7 +2612,7 @@ woocommerce.post("subscriptions/batch", data).parsed_response
 }
 ```
 
-## Get statuses ##
+## Get Statuses ##
 
 This API returns all available subscription statuses.
 
