@@ -1,6 +1,6 @@
 # Subscription notes #
 
-The subscription notes API allows you to create, view, and delete individual subscription notes on a subscription.  
+The subscription notes API allows you to create, view, and delete individual subscription notes on a subscription.
 Subscription notes are added by administrators and programmatically to store data about a subscription, or subscription events.
 
 ## Subscription note properties ##
@@ -12,9 +12,9 @@ Subscription notes are added by administrators and programmatically to store dat
 | `note`          | string    | Subscription note. <i class="label label-info">required</i>                                                                |
 | `customer_note` | boolean   | Shows/define if the note is only for reference or for the customer (the user will be notified). Default is `false`. |
 
-## Create an subscription note ##
+## Create a subscription note ##
 
-This API helps you to create a new note for an subscription.
+This API helps you to create a new note for a subscription.
 
 ### HTTP request ###
 

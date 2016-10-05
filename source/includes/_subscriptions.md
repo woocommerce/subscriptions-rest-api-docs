@@ -47,7 +47,7 @@ The Subscriptions API allows you to create, view, update, and delete individual,
 | `line_items`           | array     | Line items data. See [Line Items properties](#line-item-properties).                                                                                                 |
 | `tax_lines`            | array     | Tax lines data. See [Tax Lines properties](#tax-line-properties). <i class="label label-info">read-only</i>                                                          |
 | `shipping_lines`       | array     | Shipping lines data. See [Shipping Lines properties](#shipping-line-properties).                                                                                     |
-| `fee_lines`            | array     | Fee lines data. See [Fee Lines Properites](#fee-line-properties).                                                                                                    |
+| `fee_lines`            | array     | Fee lines data. See [Fee Lines Properties](#fee-line-properties).                                                                                                    |
 | `coupon_lines`         | array     | Coupons line data. See [Coupon Lines properties](#coupon-line-properties).                                                                                           |
 
 ### Payment method properties ###
@@ -55,7 +55,7 @@ The Subscriptions API allows you to create, view, update, and delete individual,
 |  Attribute  | Type  |                                          Description                                           |
 |-------------|-------|------------------------------------------------------------------------------------------------|
 | `post_meta` | array | Payment meta stored as post meta on the subscription `array( '_meta_key' => 'meta_value' )`    |
-| `user_meta` | array | Payemnt meta stored as user meta on the customer `array( '_meta_key' => 'meta_value' )`        |
+| `user_meta` | array | Payment meta stored as user meta on the customer `array( '_meta_key' => 'meta_value' )`        |
 
 ### Line item properties ###
 
