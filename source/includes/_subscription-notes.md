@@ -1,9 +1,9 @@
-# Subscription notes #
+# Subscription Notes #
 
-The subscription notes API allows you to create, view, and delete individual subscription notes on a subscription.  
+The subscription notes API allows you to create, view, and delete individual subscription notes on a subscription.
 Subscription notes are added by administrators and programmatically to store data about a subscription, or subscription events.
 
-## Subscription note properties ##
+## Subscription Note Properties ##
 
 |    Attribute    |    Type   |                                                     Description                                                     |
 |-----------------|-----------|---------------------------------------------------------------------------------------------------------------------|
@@ -12,9 +12,9 @@ Subscription notes are added by administrators and programmatically to store dat
 | `note`          | string    | Subscription note. <i class="label label-info">required</i>                                                                |
 | `customer_note` | boolean   | Shows/define if the note is only for reference or for the customer (the user will be notified). Default is `false`. |
 
-## Create an subscription note ##
+## Create a Subscription Note ##
 
-This API helps you to create a new note for an subscription.
+This API helps you to create a new note for a subscription.
 
 ### HTTP request ###
 
@@ -98,7 +98,7 @@ woocommerce.post("subscriptions/645/notes", data).parsed_response
 }
 ```
 
-## Retrieve a subscription note ##
+## Retrieve a Subscription Note ##
 
 This API lets you retrieve and view a specific note from a subscription.
 
@@ -162,7 +162,7 @@ woocommerce.get("subscriptions/645/notes/51").parsed_response
 }
 ```
 
-## List all subscription notes ##
+## List all Subscription Notes ##
 
 This API helps you to view all the notes from a subscription.
 
@@ -251,7 +251,7 @@ woocommerce.get("subscriptions/645/notes").parsed_response
 ]
 ```
 
-## Delete a subscription note ##
+## Delete a Subscription Note ##
 
 This API helps you delete a subscription note.
 
