@@ -13,7 +13,7 @@ toc_footers:
   - <a href="https://github.com/woocommerce/woocommerce-rest-api-docs">Contributing to WC REST API Docs</a>
   - <a href="https://github.com/woocommerce/woocommerce/tree/master/includes/api">WC REST API Source on GitHub</a>
   - <a href="https://github.com/woocommerce/woocommerce/issues?labels=API&amp;page=1&amp;state=open">WC REST API Issues</a>
-  - <a href="https://docs.woocommerce.com/documentation/plugins/subscriptions/">Subscriptions Documentation</a>
+  - <a href="https://docs.woocommerce.com/document/subscriptions/">Subscriptions Documentation</a>
   - <a href="https://github.com/woocommerce/woocommerce">WooCommerce Subscriptions</a>
   - <a href="http://github.com/tripit/slate">Documentation Powered by Slate</a>
 
