@@ -270,8 +270,8 @@ $data = [
     'payment_method' => 'stripe',
     'payment_details' => [
       'post_meta' => [
-        "_stripe_customer_id":"cus_484hfj3m4fm3",
-        "_stripe_card_id":"card_5n4fndsn0"
+        "_stripe_customer_id" => "cus_484hfj3m4fm3",
+        "_stripe_card_id" => "card_5n4fndsn0"
       ]
     ],
     'billing' => [
