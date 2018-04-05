@@ -34,7 +34,7 @@ The Subscriptions API allows you to create, view, update, and delete individual,
 | `shipping`             | array     | Shipping address. See [Customer Shipping Address properties](#shipping-address-properties).                                                                          |
 | `payment_method`       | string    | Payment method ID.                                                                                                                                                   |
 | `payment_method_title` | string    | Payment method title.                                                                                                                                                |
-| `payment_details`      | array     | Payment method data. See [Payment Method properties](#payment-method-propertise). <i class="label label-info">edit-only</i>                                                                                                                                                 |
+| `payment_details`      | array     | Payment method data. See [Payment Method properties](#payment-method-properties). <i class="label label-info">edit-only</i>                                                                                                                                                 |
 | `set_paid`             | boolean   | Define if the order is paid. It will set the status to processing and reduce stock items. Default is `false`. <i class="label label-info">write-only</i>             |
 | `transaction_id`       | string    | Unique transaction ID. In write-mode only is available if `set_paid` is `true`.                                                                                      |
 | `customer_ip_address`  | string    | Customer's IP address. <i class="label label-info">read-only</i>                                                                                                     |
@@ -270,8 +270,8 @@ $data = [
     'payment_method' => 'stripe',
     'payment_details' => [
       'post_meta' => [
-        "_stripe_customer_id":"cus_484hfj3m4fm3",
-        "_stripe_card_id":"card_5n4fndsn0"
+        "_stripe_customer_id" => "cus_484hfj3m4fm3",
+        "_stripe_card_id" => "card_5n4fndsn0"
       ]
     ],
     'billing' => [
