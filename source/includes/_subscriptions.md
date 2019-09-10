@@ -150,7 +150,7 @@ curl -X POST https://example.com/wp-json/wc/v1/subscriptions \
   "payment_details":{
     "post_meta": {
       "_stripe_customer_id":"cus_484hfj3m4fm3",
-      "_stripe_card_id":"card_5n4fndsn0"
+      "_stripe_source_id":"src_5n4fndsn0"
     }
   },
   "billing": {
@@ -208,7 +208,7 @@ var data = {
   payment_details: {
     post_meta: {
       _stripe_customer_id: 'cus_484hfj3m4fm3',
-      _stripe_card_id: 'card_5n4fndsn0'
+      _stripe_source_id: 'scr_5n4fndsn0'
     }
   },
   billing: {
@@ -271,7 +271,7 @@ $data = [
     'payment_details' => [
       'post_meta' => [
         "_stripe_customer_id" => "cus_484hfj3m4fm3",
-        "_stripe_card_id" => "card_5n4fndsn0"
+        "_stripe_source_id" => "src_5n4fndsn0"
       ]
     ],
     'billing' => [
@@ -332,7 +332,7 @@ data = {
     "payment_details":{
       "post_meta": {
         "_stripe_customer_id":"cus_484hfj3m4fm3",
-        "_stripe_card_id":"card_5n4fndsn0"
+        "_stripe_source_id":"src_5n4fndsn0"
       }
     },
     "billing": {
@@ -392,7 +392,7 @@ data = {
   payment_details: {
     post_meta: {
       _stripe_customer_id:"cus_484hfj3m4fm3",
-      _stripe_card_id:"card_5n4fndsn0"
+      _stripe_source_id:"src_5n4fndsn0"
     }
   },
   billing: {
