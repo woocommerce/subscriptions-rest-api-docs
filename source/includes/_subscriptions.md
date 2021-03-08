@@ -1308,6 +1308,212 @@ woocommerce.put("subscriptions/30", data).parsed_response
 }
 ```
 
+## Update Subscription status ##
+
+Technically [the above update endpoint](#update-a-subscription) will let you update the subscription status, but it will insert raw metadata. If you want the appropriate actions to be taken while transitioning from one subscription status to the other, use the `transition_status` field.
+Particularly, if you want to cancel the subscription over API call, when you set the `transition_status` to `pending-cancel`, the `end_date` parameter will be set and your subscription will change `status` to `cancelled` when the current period ends.
+
+### HTTP Request ###
+
+<div class="api-endpoint">
+	<div class="endpoint-data">
+		<i class="label label-put">PUT</i>
+		<h6>/wp-json/wc/v1/subscriptions/&lt;id&gt;</h6>
+	</div>
+</div>
+
+```shell
+curl -X PUT https://example.com/wp-json/wc/v1/subscriptions/30 \
+	-u consumer_key:consumer_secret \
+	-H "Content-Type: application/json" \
+	-d '{
+  "transition_status": "pending-cancel"
+}'
+```
+
+```javascript
+var data = {
+  transition_status: 'pending-cancel'
+};
+
+WooCommerce.put('subscriptions/30', data, function(err, data, res) {
+  console.log(res);
+});
+```
+
+```php
+<?php
+$data = [
+    'transition_status' => 'pending-cancel'
+];
+
+print_r($woocommerce->put('subscriptions/30', $data));
+?>
+```
+
+```python
+data = {
+    "transition_status": "pending-cancel"
+}
+
+print(wcapi.put("subscriptions/30", data).json())
+```
+
+```ruby
+data = {
+  transition_status: "pending-cancel"
+}
+
+woocommerce.put("subscriptions/30", data).parsed_response
+```
+
+> JSON response example:
+
+```json
+{  
+  "id":30,
+  "parent_id":29,
+  "status":"pending-cancel",
+  "order_key":"wc_order_572ff79932a09",
+  "currency":"AUD",
+  "version":"2.6.0",
+  "prices_include_tax":true,
+  "date_created":"2016-05-09T02:36:09",
+  "date_modified":"2016-06-21T07:11:46",
+  "customer_id":1,
+  "discount_total":"0.00",
+  "discount_tax":"0.00",
+  "shipping_total":"10.00",
+  "shipping_tax":"1.00",
+  "cart_tax":"4.55",
+  "total":"61.00",
+  "total_tax":"5.55",
+  "billing":{  
+    "first_name":"Matt",
+    "last_name":"Allan",
+    "company":"",
+    "address_1":"123 Fake Street",
+    "address_2":"",
+    "city":"Brisbane",
+    "state":"QLD",
+    "postcode":"4101",
+    "country":"AU",
+    "email":"matt@prospress.com",
+    "phone":"55555555"
+  },
+  "shipping":{  
+    "first_name":"Matt",
+    "last_name":"Allan",
+    "company":"",
+    "address_1":"123 Fake Street",
+    "address_2":"",
+    "city":"Brisbane",
+    "state":"QLD",
+    "postcode":"4101",
+    "country":"AU"
+  },
+  "payment_method":"",
+  "payment_method_title":"",
+  "transaction_id":"",
+  "customer_ip_address":"172.28.128.1",
+  "customer_user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/50.0.2661.86 Safari\/537.36",
+  "created_via":"checkout",
+  "customer_note":"",
+  "date_completed":"2016-06-21T07:11:46",
+  "date_paid":"",
+  "cart_hash":"",
+  "line_items":[  
+    {  
+      "id":12,
+      "name":"Simple subscription",
+      "sku":"",
+      "product_id":28,
+      "variation_id":0,
+      "quantity":1,
+      "tax_class":"",
+      "price":"45.45",
+      "subtotal":"45.45",
+      "subtotal_tax":"4.55",
+      "total":"45.45",
+      "total_tax":"4.55",
+      "taxes":[  
+        {  
+          "id":1,
+          "total":"4.5455",
+          "subtotal":"4.5455"
+        }
+      ],
+      "meta":[  
+
+      ]
+    }
+  ],
+  "tax_lines":[  
+    {  
+      "id":14,
+      "rate_code":"GST-1",
+      "rate_id":"1",
+      "label":"GST",
+      "compound":false,
+      "tax_total":"4.55",
+      "shipping_tax_total":"1.00"
+    }
+  ],
+  "shipping_lines":[  
+    {  
+      "id":13,
+      "method_title":"Flat Rate",
+      "method_id":"flat_rate",
+      "total":"10.00",
+      "total_tax":"1.00",
+      "taxes":[  
+        {  
+          "id":1,
+          "total":"1"
+        }
+      ]
+    }
+  ],
+  "fee_lines":[  
+
+  ],
+  "coupon_lines":[  
+
+  ],
+  "refunds":[  
+
+  ],
+  "billing_period":"month",
+  "billing_interval":"1",
+  "start_date":"2016-05-09T02:36:09",
+  "trial_end_date":"",
+  "next_payment_date":"2016-07-09T02:36:09",
+  "end_date":"2016-07-09T02:36:09"
+  "_links":{  
+    "self":[  
+      {  
+        "href":"https:\/\/vagrant.local\/wp-json\/wc\/v1\/subscriptions\/30"
+      }
+    ],
+    "collection":[  
+      {  
+        "href":"https:\/\/vagrant.local\/wp-json\/wc\/v1\/subscriptions"
+      }
+    ],
+    "customer":[  
+      {  
+        "href":"https:\/\/vagrant.local\/wp-json\/wc\/v1\/customers\/1"
+      }
+    ],
+    "up":[  
+      {  
+        "href":"https:\/\/vagrant.local\/wp-json\/wc\/v1\/orders\/29"
+      }
+    ]
+  }
+}
+```
+
 ## Delete a Subscription ##
 
 This API helps you delete a subscription.
