@@ -23,51 +23,55 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #f7f7f7;
-$examples-bg: #5A576E;
-$code-bg: #20182F;
-$nav-subitem-bg: #f7f7f7;
-$nav-active-bg: #00BA8A; // Prospress dark green
-$lang-select-border: #000;
-$lang-select-bg: #27253C;
-$lang-select-active-bg: $examples-bg; // feel free to change this to blue or something
-$lang-select-pressed-bg: #20182F; // color of language tab bg when mouse is pressed
-$main-bg: #ffffff;
-$aside-notice-bg: #00BA8A; // Prospress dark green
-$aside-warning-bg: #ca4949;
-$aside-success-bg: #38a845;
-$search-notice-bg: #c97a7e;
-$link-color: #00BA8A; // Prospress dark green
+$nav-bg: #2E3336 !default;
+$examples-bg: #2E3336 !default;
+$code-bg: #1E2224 !default;
+$code-annotation-bg: #191D1F !default;
+$nav-subitem-bg: #1E2224 !default;
+$nav-active-bg: #7F54B3 !default;
+$nav-active-parent-bg: #1E2224 !default; // parent links of the current section
+$lang-select-border: #000 !default;
+$lang-select-bg: #1E2224 !default;
+$lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
+$lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
+$main-bg: #F3F7F9 !default;
+$aside-notice-bg: #7F54B3 !default;
+$aside-warning-bg: #ca4949 !default;
+$aside-success-bg: #6ac174 !default;
+$search-notice-bg: #c97a7e !default;
 
 
 // TEXT COLORS
 ////////////////////
-$main-text: #333; // main content text color
-$nav-text: #3c3c3c;
-$nav-active-text: #fff;
-$lang-select-text: #fff; // color of unselected language tab text
-$lang-select-active-text: #fff; // color of selected language tab text
-$lang-select-pressed-text: #fff; // color of language tab text when mouse is pressed
+$main-text: #333 !default; // main content text color
+$nav-text: #fff !default;
+$nav-active-text: #fff !default;
+$nav-active-parent-text: #fff !default; // parent links of the current section
+$lang-select-text: #fff !default; // color of unselected language tab text
+$lang-select-active-text: #fff !default; // color of selected language tab text
+$lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
 
 
 // SIZES
 ////////////////////
-$nav-width: 230px; // width of the navbar
-$examples-width: 50%; // portion of the screen taken up by code examples
-$logo-margin: 20px; // margin between nav items and logo, ignored if search is active
-$main-padding: 28px; // padding to left and right of content & examples
-$nav-padding: 20px; // padding to left and right of navbar
-$nav-v-padding: 10px; // padding used vertically around search boxes and results
-$h1-margin-bottom: 21px; // padding under the largest header tags
-$tablet-width: 930px; // min width before reverting to tablet size
-$phone-width: $tablet-width - $nav-width; // min width before reverting to mobile size
+$nav-width: 230px !default; // width of the navbar
+$examples-width: 50% !default; // portion of the screen taken up by code examples
+$logo-margin: 0px !default; // margin below logo
+$main-padding: 28px !default; // padding to left and right of content & examples
+$nav-padding: 15px !default; // padding to left and right of navbar
+$nav-v-padding: 10px !default; // padding used vertically around search boxes and results
+$nav-indent: 10px !default; // extra padding for ToC subitems
+$code-annotation-padding: 13px !default; // padding inside code annotations
+$h1-margin-bottom: 21px !default; // padding under the largest header tags
+$tablet-width: 930px !default; // min width before reverting to tablet size
+$phone-width: $tablet-width - $nav-width !default; // min width before reverting to mobile size
 
 
 // FONTS
 ////////////////////
 %default-font {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
-  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
 }
 
 %header-font {
@@ -81,15 +85,23 @@ $phone-width: $tablet-width - $nav-width; // min width before reverting to mobil
   line-height: 1.5;
 }
 
+.content aside a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.content aside {
+  color: #fff;
+}
+
+a {
+  color: #7f54b3
+}
 
 // OTHER
 ////////////////////
-$nav-active-shadow: #f7f7f7;
-$nav-footer-border-color: #666;
-$nav-embossed-border-top: #000;
-$nav-embossed-border-bottom: #939393;
-$main-embossed-text-shadow: 0px 1px 0px #fff;
-$search-box-border-color: #666;
+$nav-footer-border-color: #666 !default;
+$search-box-border-color: #666 !default;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -98,10 +110,76 @@ $search-box-border-color: #666;
 // These settings are probably best left alone.
 
 %break-words {
-     word-break: break-all;
-
-     /* Non standard for webkit */
-     word-break: break-word;
-
-        hyphens: auto;
+    word-break: break-all;
+    hyphens: auto;
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// LABEL
+////////////////////////////////////////////////////////////////////////////////
+.label {
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.label-get {
+  background: #008000;
+}
+
+.label-post,
+.label-put {
+  background: #4e92d7;
+}
+
+.label-delete {
+  background: #ca4949;
+}
+
+.label-info {
+  background: #efefef;
+  color: #999;
+  float: right;
+  font-weight: 700;
+  font-size: 70%;
+  padding: 2px 4px;
+  margin-left: 5px;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+// API ENDPOINT
+////////////////////////////////////////////////////////////////////////////////
+.api-endpoint {
+	margin-right: $examples-width;
+	padding: 0 $main-padding;
+	box-sizing: border-box;
+	display: block;
+	@extend %left-col;
+
+	.endpoint-data {
+	  background-color: $code-bg;
+	  color: #fff;
+	  border-radius: 5px;
+	  border-top: 1px solid #000;
+	  border-bottom: 1px solid #404040;
+	  text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+	  margin: 15px 0;
+	  height: 38px;
+
+	  i {
+		display: inline-block;
+		margin: 5px;
+		padding: 4px 12px;
+		line-height: 20px;
+	  }
+
+	  h6 {
+		display: inline-block;
+		margin: 0;
+		@extend %code-font;
+		text-transform: lowercase;
+		font-weight: 400;
+	  }
+	}
+  }

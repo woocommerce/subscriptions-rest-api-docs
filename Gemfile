@@ -1,12 +1,14 @@
+ruby '>= 2.5'
 source 'https://rubygems.org'
 
 # Middleman
-gem 'middleman', '~>3.3.10'
-gem 'middleman-gh-pages', '~> 0.0.3'
-gem 'middleman-syntax', '~> 2.0.0'
-gem 'middleman-autoprefixer', '~> 2.4.4'
-gem 'rouge', '~> 1.9.0'
-gem 'redcarpet', '~> 3.3.2'
-
-gem 'rake', '~> 10.4.2'
-gem 'therubyracer', '~> 0.12.1', platforms: :ruby
+gem 'middleman', :github => 'middleman/middleman', :branch => '4.x'
+gem 'middleman-syntax', '~> 3.2'
+gem 'middleman-autoprefixer', '~> 2.7'
+gem 'middleman-sprockets', '~> 4.1'
+gem 'rouge', '~> 3.21'
+gem 'redcarpet', '~> 3.5.0'
+gem 'nokogiri', '~> 1.11.0'
+gem 'sass'
+gem 'webrick'
+gem 'sassc', '2.4.0'
