@@ -2,11 +2,11 @@
 
 <!-- This is not a support portal, or a place to get help with writing code to use the REST API. -->
 
-<!-- If you need support, please submit a ticket via the helpdesk instead: https://prospress.com/support/ -->
+<!-- If you need support, please submit a ticket via the helpdesk instead: https://woocommerce.com/my-account/create-a-ticket/ -->
 
 <!-- We'll do our best to help, but please understand custom development is not covered by support, which includes writing code that integrates with the REST API. -->
 
-## Description of the Documentation Issue 
+## Description of the Documentation Issue
 
 
 ### Link to the Section Containing the Issue
