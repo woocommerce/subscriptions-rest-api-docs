@@ -13,6 +13,12 @@ The following table shows API versions present in each major version of WooComme
 | `v3`        | 3.1 or later             | 3.7 or later | 4.4 or later | -                     |
 | `v1`        | 2.1 or later             | 2.6 or later | 4.4 or later | [v1 docs](index.html) |
 
+Prior to WC 2.6, WooCommerce had it's own REST API separate from WordPress which is now known as the legacy API. You can find the documentation about Subscriptions support for `/v3` of the legacy API separately.
+
+| API Version |   WC Version   |  WP Version  |             Documentation         |
+|-------------|----------------|--------------|-----------------------------------|
+| `Legacy v3` | 2.4.x or later | 4.1 or later | [Partial v3 docs](legacy-v3.html) |
+
 ## Requirements
 
 To use the latest version of the REST API you must be using:
