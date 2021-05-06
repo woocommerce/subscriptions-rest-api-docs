@@ -1,5 +1,7 @@
 # Introduction
 
+<aside class="warning">This documentation is for the WC Subscriptions REST API v3. Using v3 subscription endpoints requires WC Subscriptions 3.1 - due to be released soon. See v1 docs <a href="index.html">here</a>.</aside>
+
 WooCommerce Subscriptions 2.1+ and WooCommerce 2.6+ have been fully integrated with the WordPress REST API. This allows WC and Subscriptions data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.
 
 The current WP REST API integration version is v3 which takes a first-order position in endpoints.
