@@ -1,7 +1,5 @@
 # Introduction #
 
-<aside class="warning">This documentation is for the WC Subscriptions REST API v1. You can find documentation for the latest REST API version <a href="index.html">here</a>.</aside>
-
 WooCommerce Subscriptions (WCS) 2.1+ and WooCommerce (WC) 2.6+ has been fully integrated with the WordPress [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer) API. This allows WC and Subscriptions data to be created, read, updated, and deleted using requests in JSON format and using WordPress REST API Authentication methods and standard HTTP verbs which are understood by most HTTP clients.
 
 The current WP REST API integration version is `v1` which takes a first-order position in endpoints.
@@ -10,7 +8,7 @@ The following table shows API versions present in each major version of WooComme
 
 | API Version | WCS Version | WC Version | WP Version | Documentation |
 |-------------|------------|------------|------------|------------|
-| `v3`        | 3.1 or later | 3.7 or later | 4.4 or later | [v3 docs](index.html) |
+| `v3`        | 3.1 or later | 3.7 or later | 4.4 or later | [v3 docs](v3-index.html) |
 | `v1`        | 2.1 or later | 2.6.x or later | 4.4 or later | - |
 
 Prior to WC 2.6, WooCommerce had it's own REST API separate from WordPress which is now known as the legacy API. You can find the documentation about Subscriptions support for `/v3` of the legacy API separately.
