@@ -8,10 +8,10 @@ The current WP REST API integration version is v3 which takes a first-order posi
 
 The following table shows API versions present in each major version of WooCommerce:
 
-| API Version | WC Subscriptions Version |  WC Version  |  WP Version  |    Documentation    |
-|-------------|--------------------------|--------------|--------------|---------------------|
-| `v3`        | 3.1 or later             | 3.7 or later | 4.4 or later | -                   |
-| `v1`        | 2.1 or later             | 2.6 or later | 4.4 or later | [v1 docs](v1.html)  |
+| API Version | WC Subscriptions Version |  WC Version  |  WP Version  |     Documentation     |
+|-------------|--------------------------|--------------|--------------|-----------------------|
+| `v3`        | 3.1 or later             | 3.7 or later | 4.4 or later | -                     |
+| `v1`        | 2.1 or later             | 2.6 or later | 4.4 or later | [v1 docs](index.html) |
 
 ## Requirements
 
