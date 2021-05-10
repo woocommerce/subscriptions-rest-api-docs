@@ -1,5 +1,5 @@
 ---
-title: Subscriptions REST API Documentation - WP REST API v1
+title: WooCommerce Subscription REST API Reference
 
 language_tabs:
   - shell: cURL
@@ -9,20 +9,22 @@ language_tabs:
   - ruby: Ruby
 
 toc_footers:
-  - <a href="https://github.com/prospress/subscriptions-rest-api-docs">Contributing to WCS REST API Docs</a>
-  - <a href="https://github.com/woocommerce/woocommerce-rest-api-docs">Contributing to WC REST API Docs</a>
-  - <a href="https://github.com/woocommerce/woocommerce/tree/master/includes/api">WC REST API Source on GitHub</a>
-  - <a href="https://github.com/woocommerce/woocommerce/issues?labels=API&amp;page=1&amp;state=open">WC REST API Issues</a>
-  - <a href="https://docs.woocommerce.com/documentation/plugins/woocommerce/woocommerce-extensions/woocommerce-subscriptions/">Subscriptions Documentation</a>
-  - <a href="https://github.com/woocommerce/woocommerce">WooCommerce Subscriptions</a>
-  - <a href="http://github.com/tripit/slate">Documentation Powered by Slate</a>
+  - <a href='https://woocommerce.com/products/woocommerce-subscriptions/'>WooCommerce Subscriptions</a>
+  - <a href='https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction'>WC REST API Documentation</a>
+  - <a href='https://docs.woocommerce.com/documentation/plugins/woocommerce/woocommerce-extensions/woocommerce-subscriptions/'>WC Subscriptions Documentation</a>
+  - <a href='https://woocommerce.com/my-account/create-a-ticket/'>Support</a>
+  - <a href="https://github.com/tripit/slate">Documentation Powered by Slate</a>
 
 includes:
-  - v1/introduction
-  - v1/authentication
-  - v1/subscriptions
-  - v1/subscription-orders
-  - v1/subscription-notes
+  - introduction
+  - authentication
+  - subscriptions
+  - subscription-orders
+  - subscription-notes
+  - system-status
 
-search: false
+search: true
+
+code_clipboard: true
 ---
+
