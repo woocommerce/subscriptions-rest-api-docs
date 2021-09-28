@@ -56,7 +56,7 @@ The Subscriptions API enables you to create, view, update, and delete individual
 | `resubscribed_subscription` | string    | The ID of the new resubscribed subscription. <i class="label label-info">read-only</i>                                                                                                                   |
 | `removed_line_items`        | array     | Item data for items removed by the customer from their my account page. See [Subscription line items properties](#subscription-line-item-properties). <i class="label label-info">read-only</i>          |
 | `payment_details`           | array     | Payment method data. See [Payment details properties](#payment-details-properties). <i class="label label-info">edit-only</i>                                                                            |
-| `status_transition`         | string    | The subscription status to transition to. Status transitions will re-calculate the appropriote subscription dates. See [Setting status](#setting-status) <i class="label label-info">write-only</i>      |
+| `transition_status`         | string    | The subscription status to transition to. Status transitions will re-calculate the appropriote subscription dates. See [Setting status](#setting-status) <i class="label label-info">write-only</i>      |
 
 ### Subscription billing address properties ###
 
@@ -212,13 +212,13 @@ See the example requests for an example of the correct format.
 
 ### Setting status ###
 
-There are two ways you can set a subscriptions status, via the `status` and `status_transition` arguments. This short guide aims to explain the differences between both args.
+There are two ways you can set a subscriptions status, via the `status` and `transition_status` arguments. This short guide aims to explain the differences between both args.
 
 #### `status` ####
 
 - Simple sets the subscription status via `$subscription->set_status()`. No date calculations or changes occur.
 
-#### `status_transition` ####
+#### `transition_status` ####
 
 - Sets the subscription status via `$subscription->update_status()`.
 - Using this method of `WC_Subscription::update_status()` to set the status is more inline with how setting a status by a user via the store behaves. For example:
@@ -226,10 +226,10 @@ There are two ways you can set a subscriptions status, via the `status` and `sta
    - Suspension counts are updated on on-hold/suspension.
    - Cancelled dates are set on cancellation.
 
-In general, when setting a status, use `status` when you want to full control the subscription's dates. If you want the system to calculate the appropriate dates changes as if a user changed the status on the store, use `status_transition`.
+In general, when setting a status, use `status` when you want to full control the subscription's dates. If you want the system to calculate the appropriate dates changes as if a user changed the status on the store, use `transition_status`.
 
 <aside class="notice">
-  <strong>Please note</strong>, when processing the request, the subscription status is set last and so setting date properties when using <strong><code>status_transition</code></strong> may lead to those dates being overriden by the transition calculations.
+  <strong>Please note</strong>, when processing the request, the subscription status is set last and so setting date properties when using <strong><code>transition_status</code></strong> may lead to those dates being overriden by the transition calculations.
 </aside>
 
 ## Create a subscription ##
