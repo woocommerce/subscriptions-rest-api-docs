@@ -1,0 +1,1669 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Subscriptions REST API Documentation - Legacy v3</title>
+
+    <link rel="icon" href="images/favicon-32x32-870b51dc.png" sizes="32x32" />
+    <link rel="icon" href="images/favicon-192x192-870b51dc.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="images/favicon-180x180-d3193a3a.png" />
+    <meta name="msapplication-TileImage" content="images/favicon-270x270-442e4064.png" />
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nn {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nl {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ni {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .bp {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vg {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .vi {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .w {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+  background-color: #272822;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-9518b68e.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-c275c2f6.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8KCYZ2CYMS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8KCYZ2CYMS', {
+        'content_group' : 'WooCommerce REST API Docs',
+      });
+    </script>
+  </head>
+
+  <body class="legacy-v3" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;php&quot;,&quot;python&quot;,&quot;ruby&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="#" class="logo">
+        <img src="images/logo-19a8dd37.png" alt="" />
+      </a>
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="javascript">Node.js</a>
+              <a href="#" data-language-name="php">PHP</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="ruby">Ruby</a>
+        </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#subscriptions" class="toc-h1 toc-link" data-title="Subscriptions">Subscriptions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#subscription-properties" class="toc-h2 toc-link" data-title="Subscription Properties">Subscription Properties</a>
+                  </li>
+                  <li>
+                    <a href="#create-a-subscription" class="toc-h2 toc-link" data-title="Create A Subscription">Create A Subscription</a>
+                  </li>
+                  <li>
+                    <a href="#view-a-subscription" class="toc-h2 toc-link" data-title="View A Subscription">View A Subscription</a>
+                  </li>
+                  <li>
+                    <a href="#view-list-of-subscriptions" class="toc-h2 toc-link" data-title="View List Of Subscriptions">View List Of Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#update-a-subscription" class="toc-h2 toc-link" data-title="Update A Subscription">Update A Subscription</a>
+                  </li>
+                  <li>
+                    <a href="#get-related-orders-for-a-subscription" class="toc-h2 toc-link" data-title="Get related orders for a Subscription">Get related orders for a Subscription</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href="https://github.com/prospress/subscriptions-rest-api-docs">Contributing to WCS REST API Docs</a></li>
+            <li><a href="https://github.com/woocommerce/woocommerce-rest-api-docs">Contributing to WC REST API Docs</a></li>
+            <li><a href="https://github.com/woocommerce/woocommerce/tree/master/includes/api">WC REST API Source on GitHub</a></li>
+            <li><a href="https://github.com/woocommerce/woocommerce/issues?labels=API&amp;page=1&amp;state=open">WC REST API Issues</a></li>
+            <li><a href="https://docs.woocommerce.com/document/subscriptions/">Subscriptions Documentation</a></li>
+            <li><a href="https://github.com/woocommerce/woocommerce">WooCommerce Subscriptions</a></li>
+            <li><a href="http://github.com/tripit/slate">Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='subscriptions'>Subscriptions</h1>
+<p>This section lists all API that can be used to create, edit or otherwise manipulate subscriptions.</p>
+<h2 id='subscription-properties'>Subscription Properties</h2>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Subscription ID (post ID) <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>order_number</code></td>
+<td>integer</td>
+<td>Order number <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>string</td>
+<td>UTC DateTime when the order was created <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td>string</td>
+<td>UTC DateTime when the order was last updated <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>completed_at</code></td>
+<td>string</td>
+<td>UTC DateTime when the order was last completed <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>string</td>
+<td>UTC DateTime for the subscription start date.</td>
+</tr>
+<tr>
+<td><code>next_payment_date</code></td>
+<td>string</td>
+<td>UTC DateTime for the subscriptions next payment date.</td>
+</tr>
+<tr>
+<td><code>trial_end_date</code></td>
+<td>string</td>
+<td>UTC DateTime for the subscriptions trial end date.</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>string</td>
+<td>UTC DateTime for the subscription end date.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Subscription status. By default the statuses available are: <code>pending</code>, <code>on-hold</code>, <code>active</code>, <code>pending-cancel</code>, <code>cancelled</code> and <code>expired</code>. See <a href="#view-list-of-subscription-statuses">View List of Subscription Statuses</a></td>
+</tr>
+<tr>
+<td><code>billing_period</code></td>
+<td>string</td>
+<td>Billing period for the subscription. By default, valid billing periods are: <code>day</code>, <code>week</code>, <code>month</code>, <code>year</code>. See <a href="#view-list-of-subscription-periods">View List of Subscription Periods</a></td>
+</tr>
+<tr>
+<td><code>billing_interval</code></td>
+<td>integer</td>
+<td>The number of billing periods between each payment cycle.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>string</td>
+<td>Currency in ISO format, e.g <code>USD</code></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>float</td>
+<td>Order total <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>subtotal</code></td>
+<td>float</td>
+<td>Order subtotal <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>total_line_items_quantity</code></td>
+<td>integer</td>
+<td>Total of order items <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>total_tax</code></td>
+<td>float</td>
+<td>Order tax total <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>total_shipping</code></td>
+<td>float</td>
+<td>Order shipping total <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>cart_tax</code></td>
+<td>float</td>
+<td>Order cart tax <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>shipping_tax</code></td>
+<td>float</td>
+<td>Order shipping tax <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>total_discount</code></td>
+<td>float</td>
+<td>Order total discount <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>shipping_methods</code></td>
+<td>string</td>
+<td>Text list of the shipping methods used in the order <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>payment_details</code></td>
+<td>array</td>
+<td>List of payment details. See <a href="#payment-details-properties">Payment Details Properties</a></td>
+</tr>
+<tr>
+<td><code>billing_address</code></td>
+<td>array</td>
+<td>List of customer billing address. See <a href="#billing-address-properties">Customer Billing Address Properties</a></td>
+</tr>
+<tr>
+<td><code>shipping_address</code></td>
+<td>array</td>
+<td>List of customer shipping address. See <a href="#shipping-address-properties">Customer Shipping Address Properties</a></td>
+</tr>
+<tr>
+<td><code>note</code></td>
+<td>string</td>
+<td>Customer subscription notes</td>
+</tr>
+<tr>
+<td><code>customer_ip</code></td>
+<td>string</td>
+<td>Customer IP address <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>customer_user_agent</code></td>
+<td>string</td>
+<td>Customer User-Agent <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>customer_id</code></td>
+<td>integer</td>
+<td>Customer ID (user ID) <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>view_order_url</code></td>
+<td>string</td>
+<td>URL to view the subscription in frontend <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>line_items</code></td>
+<td>array</td>
+<td>List of order line items. See <a href="#line-items-properties">Line Items Properties</a></td>
+</tr>
+<tr>
+<td><code>shipping_lines</code></td>
+<td>array</td>
+<td>List of shipping line items. See <a href="#shipping-lines-properties">Shipping Lines Properties</a></td>
+</tr>
+<tr>
+<td><code>tax_lines</code></td>
+<td>array</td>
+<td>List of tax line items. See <a href="#tax-lines-properties">Tax Lines Properties</a> <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>fee_lines</code></td>
+<td>array</td>
+<td>List of fee line items. See <a href="#fee-lines-properites">Fee Lines Properites</a></td>
+</tr>
+<tr>
+<td><code>coupon_lines</code></td>
+<td>array</td>
+<td>List of cupon line items. See <a href="#coupon-lines-properties">Coupon Lines Properties</a></td>
+</tr>
+<tr>
+<td><code>customer</code></td>
+<td>array</td>
+<td>Customer data. See <a href="#customers-properties">Customer Properties</a></td>
+</tr>
+</tbody></table>
+<h3 id='payment-details-properties'>Payment Details Properties</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>method_id</code></td>
+<td>string</td>
+<td>Payment method ID <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>method_title</code></td>
+<td>string</td>
+<td>Payment method title <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>transaction_id</code></td>
+<td>string</td>
+<td>Transaction ID, an optional field to set the transacion ID when complate one payment (to set this you need set the <code>paid</code> as <code>true</code> too)</td>
+</tr>
+</tbody></table>
+
+<p>Payment method meta specific to the <code>method_id</code> can also be given in <a href="#payment-details-properties">Payment Details</a> to support recurring payments on the subscription.</p>
+<h3 id='line-items-properties'>Line Items Properties</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Line item ID <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>subtotal</code></td>
+<td>float</td>
+<td>Line item subtotal</td>
+</tr>
+<tr>
+<td><code>subtotal_tax</code></td>
+<td>float</td>
+<td>Line item tax subtotal</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>float</td>
+<td>Line item total</td>
+</tr>
+<tr>
+<td><code>total_tax</code></td>
+<td>float</td>
+<td>Line item tax total</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>float</td>
+<td>Product price <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>integer</td>
+<td>Quantity</td>
+</tr>
+<tr>
+<td><code>tax_class</code></td>
+<td>string</td>
+<td>Product tax class <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Product name <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>product_id</code></td>
+<td>integer</td>
+<td>Product ID <i class="label label-info">required</i>. This value <em>does not</em> need to be a subscription product.</td>
+</tr>
+<tr>
+<td><code>sku</code></td>
+<td>string</td>
+<td>Product SKU <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td>array</td>
+<td>List of product meta items. See <a href="#products-meta-items-properties">Products Meta Items Properties</a></td>
+</tr>
+<tr>
+<td><code>variations</code></td>
+<td>array</td>
+<td>List of product variation attributes. e.g: <code>&quot;variation&quot;: {&quot;pa_color&quot;: &quot;Black&quot;, &quot;pa_size&quot;: &quot;XGG&quot;}</code> (Use <code>pa_</code> prefix when is a product attribute) <i class="label label-info">write-only</i></td>
+</tr>
+</tbody></table>
+<h4 id='products-meta-items-properties'>Products Meta Items Properties</h4>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>key</code></td>
+<td>string</td>
+<td>Meta item key</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>string</td>
+<td>Meta item label</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>string</td>
+<td>Meta item value</td>
+</tr>
+</tbody></table>
+<h3 id='shipping-lines-properties'>Shipping Lines Properties</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Shipping line ID <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>method_id</code></td>
+<td>string</td>
+<td>Shipping method ID <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>method_title</code></td>
+<td>string</td>
+<td>Shipping method title <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>float</td>
+<td>Total amount</td>
+</tr>
+</tbody></table>
+<h3 id='tax-lines-properties'>Tax Lines Properties</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Tax rate line ID <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>rate_id</code></td>
+<td>integer</td>
+<td>Tax rate ID <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td>string</td>
+<td>Tax rate code <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>Tax rate title/name <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>float</td>
+<td>Tax rate total <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>compound</code></td>
+<td>boolean</td>
+<td>Shows if is or not a compound rate. Compound tax rates are applied on top of other tax rates. <i class="label label-info">read-only</i></td>
+</tr>
+</tbody></table>
+<h3 id='fee-lines-properites'>Fee Lines Properites</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Fee line ID <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>Shipping method title <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>taxable</code></td>
+<td>boolean</td>
+<td>Shows/define if the fee is taxable <i class="label label-info">write-only</i></td>
+</tr>
+<tr>
+<td><code>tax_class</code></td>
+<td>string</td>
+<td>Tax class, requered in write-mode if the fee is taxable</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>float</td>
+<td>Total amount</td>
+</tr>
+<tr>
+<td><code>total_tax</code></td>
+<td>float</td>
+<td>Tax total</td>
+</tr>
+</tbody></table>
+<h3 id='coupon-lines-properties'>Coupon Lines Properties</h3>
+<table><thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Coupon line ID <i class="label label-info">read-only</i></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td>string</td>
+<td>Coupon code <i class="label label-info">required</i></td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>float</td>
+<td>Total amount <i class="label label-info">required</i></td>
+</tr>
+</tbody></table>
+<h2 id='create-a-subscription'>Create A Subscription</h2>
+<p>This API helps you to create a new subscription.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-post">POST</i>
+        <h6>/wc-api/v3/subscriptions</h6>
+    </div>
+</div>
+
+<blockquote>
+<p>Example to create a basic subscription:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://example.com/wc-api/v3/subscriptions <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+  "subscription": {
+    "billing_period": "month",
+    "billing_interval": 1,
+    "start_date": "2015-05-10 08:30:00",
+    "next_payment_date": "2015-06-10 08:30:00",
+    "payment_details": {
+      "method_id": "stripe",
+      "method_title": "Stripe (Credit Card)",
+      "post_meta": {
+        "_stripe_customer_id": "cus_T35TCU57M3R",
+        "_stripe_card_id": "card_T35TC4RD"
+      }
+    },
+    "billing_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "address_1": "969 Market",
+      "address_2": "",
+      "city": "San Francisco",
+      "state": "CA",
+      "postcode": "94103",
+      "country": "US",
+      "email": "john.doe@example.com",
+      "phone": "(555) 555-5555"
+    },
+    "shipping_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "address_1": "969 Market",
+      "address_2": "",
+      "city": "San Francisco",
+      "state": "CA",
+      "postcode": "94103",
+      "country": "US"
+    },
+    "customer_id": 2,
+    "line_items": [
+      {
+        "product_id": 546,
+        "quantity": 2
+      },
+      {
+        "product_id": 613,
+        "quantity": 1,
+        "variations": {
+          "pa_color": "Black"
+        }
+      }
+    ],
+    "shipping_lines": [
+      {
+        "method_id": "flat_rate",
+        "method_title": "Flat Rate",
+        "total": 10
+      }
+    ]
+  }
+}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">subscription</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">billing_period</span><span class="p">:</span> <span class="dl">'</span><span class="s1">month</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">billing_interval</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">start_date</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2015-05-10 08:30:00</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">next_payment_date</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2015-06-10 08:30:00</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">payment_details</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">method_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">stripe</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">method_title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Stripe (Credit Card)</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">post_meta</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">_stripe_customer_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">cus_T35TCU57M3R</span><span class="dl">'</span><span class="p">,</span>
+          <span class="na">_stripe_card_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">card_T35TC4RD</span><span class="dl">'</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">billing_address</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">address_1</span><span class="p">:</span> <span class="dl">'</span><span class="s1">969 Market</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">address_2</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+      <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">San Francisco</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">state</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CA</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">postcode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">94103</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">country</span><span class="p">:</span> <span class="dl">'</span><span class="s1">US</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">john.doe@example.com</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">phone</span><span class="p">:</span> <span class="dl">'</span><span class="s1">(555) 555-5555</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">shipping_address</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">first_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">John</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">last_name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Doe</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">address_1</span><span class="p">:</span> <span class="dl">'</span><span class="s1">969 Market</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">address_2</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
+      <span class="na">city</span><span class="p">:</span> <span class="dl">'</span><span class="s1">San Francisco</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">state</span><span class="p">:</span> <span class="dl">'</span><span class="s1">CA</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">postcode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">94103</span><span class="dl">'</span><span class="p">,</span>
+      <span class="na">country</span><span class="p">:</span> <span class="dl">'</span><span class="s1">US</span><span class="dl">'</span>
+    <span class="p">},</span>
+    <span class="na">customer_id</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">line_items</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">product_id</span><span class="p">:</span> <span class="mi">546</span><span class="p">,</span>
+        <span class="na">quantity</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">product_id</span><span class="p">:</span> <span class="mi">613</span><span class="p">,</span>
+        <span class="na">quantity</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="na">variations</span><span class="p">:</span> <span class="p">{</span>
+          <span class="na">pa_color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Black</span><span class="dl">'</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="na">shipping_lines</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">method_id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">flat_rate</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">method_title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Flat Rate</span><span class="dl">'</span><span class="p">,</span>
+        <span class="na">total</span><span class="p">:</span> <span class="mi">10</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">WooCommerce</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">subscriptions</span><span class="dl">'</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"subscription"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"billing_period"</span><span class="p">:</span> <span class="s">"month"</span><span class="p">,</span>
+        <span class="s">"billing_interval"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"start_date"</span><span class="p">:</span> <span class="s">"2015-05-10 08:30:00"</span><span class="p">,</span>
+        <span class="s">"next_payment_date"</span><span class="p">:</span> <span class="s">"2015-06-10 08:30:00"</span><span class="p">,</span>
+        <span class="s">"payment_details"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"method_id"</span><span class="p">:</span> <span class="s">"stripe"</span><span class="p">,</span>
+            <span class="s">"method_title"</span><span class="p">:</span> <span class="s">"Stripe (Credit Card)"</span><span class="p">,</span>
+            <span class="s">"post_meta"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s">"_stripe_customer_id"</span><span class="p">:</span> <span class="s">"cus_T35TCU57M3R"</span><span class="p">,</span>
+                <span class="s">"_stripe_card_id"</span><span class="p">:</span> <span class="s">"card_T35TC4RD"</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s">"billing_address"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"first_name"</span><span class="p">:</span> <span class="s">"John"</span><span class="p">,</span>
+            <span class="s">"last_name"</span><span class="p">:</span> <span class="s">"Doe"</span><span class="p">,</span>
+            <span class="s">"address_1"</span><span class="p">:</span> <span class="s">"969 Market"</span><span class="p">,</span>
+            <span class="s">"address_2"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+            <span class="s">"city"</span><span class="p">:</span> <span class="s">"San Francisco"</span><span class="p">,</span>
+            <span class="s">"state"</span><span class="p">:</span> <span class="s">"CA"</span><span class="p">,</span>
+            <span class="s">"postcode"</span><span class="p">:</span> <span class="s">"94103"</span><span class="p">,</span>
+            <span class="s">"country"</span><span class="p">:</span> <span class="s">"US"</span><span class="p">,</span>
+            <span class="s">"email"</span><span class="p">:</span> <span class="s">"john.doe@example.com"</span><span class="p">,</span>
+            <span class="s">"phone"</span><span class="p">:</span> <span class="s">"(555) 555-5555"</span>
+        <span class="p">},</span>
+        <span class="s">"shipping_address"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"first_name"</span><span class="p">:</span> <span class="s">"John"</span><span class="p">,</span>
+            <span class="s">"last_name"</span><span class="p">:</span> <span class="s">"Doe"</span><span class="p">,</span>
+            <span class="s">"address_1"</span><span class="p">:</span> <span class="s">"969 Market"</span><span class="p">,</span>
+            <span class="s">"address_2"</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span>
+            <span class="s">"city"</span><span class="p">:</span> <span class="s">"San Francisco"</span><span class="p">,</span>
+            <span class="s">"state"</span><span class="p">:</span> <span class="s">"CA"</span><span class="p">,</span>
+            <span class="s">"postcode"</span><span class="p">:</span> <span class="s">"94103"</span><span class="p">,</span>
+            <span class="s">"country"</span><span class="p">:</span> <span class="s">"US"</span>
+        <span class="p">},</span>
+        <span class="s">"customer_id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s">"line_items"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">"product_id"</span><span class="p">:</span> <span class="mi">546</span><span class="p">,</span>
+                <span class="s">"quantity"</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="s">"product_id"</span><span class="p">:</span> <span class="mi">613</span><span class="p">,</span>
+                <span class="s">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s">"variations"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s">"pa_color"</span><span class="p">:</span> <span class="s">"Black"</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s">"shipping_lines"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s">"method_id"</span><span class="p">:</span> <span class="s">"flat_rate"</span><span class="p">,</span>
+                <span class="s">"method_title"</span><span class="p">:</span> <span class="s">"Flat Rate"</span><span class="p">,</span>
+                <span class="s">"total"</span><span class="p">:</span> <span class="mi">10</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">wcapi</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"subscriptions"</span><span class="p">,</span> <span class="n">data</span><span class="p">).</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">subscription: </span><span class="p">{</span>
+    <span class="ss">billing_period: </span><span class="s2">"month"</span><span class="p">,</span>
+    <span class="ss">billing_interval: </span><span class="mi">1</span><span class="p">,</span>
+    <span class="ss">start_date: </span><span class="s2">"2015-05-10 08:30:00"</span><span class="p">,</span>
+    <span class="ss">next_payment_date: </span><span class="s2">"2015-06-10 08:30:00"</span><span class="p">,</span>
+    <span class="ss">payment_details: </span><span class="p">{</span>
+        <span class="ss">method_id: </span><span class="s2">"stripe"</span><span class="p">,</span>
+        <span class="ss">method_title: </span><span class="s2">"Stripe (Credit Card)"</span><span class="p">,</span>
+        <span class="ss">post_meta: </span><span class="p">{</span>
+            <span class="ss">_stripe_customer_id: </span><span class="s2">"cus_T35TCU57M3R"</span><span class="p">,</span>
+            <span class="ss">_stripe_card_id: </span><span class="s2">"card_T35TC4RD"</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="ss">payment_details: </span><span class="p">{</span>
+      <span class="ss">method_id: </span><span class="s2">"bacs"</span><span class="p">,</span>
+      <span class="ss">method_title: </span><span class="s2">"Direct Bank Transfer"</span><span class="p">,</span>
+      <span class="ss">paid: </span><span class="kp">true</span>
+    <span class="p">},</span>
+    <span class="ss">billing_address: </span><span class="p">{</span>
+      <span class="ss">first_name: </span><span class="s2">"John"</span><span class="p">,</span>
+      <span class="ss">last_name: </span><span class="s2">"Doe"</span><span class="p">,</span>
+      <span class="ss">address_1: </span><span class="s2">"969 Market"</span><span class="p">,</span>
+      <span class="ss">address_2: </span><span class="s2">""</span><span class="p">,</span>
+      <span class="ss">city: </span><span class="s2">"San Francisco"</span><span class="p">,</span>
+      <span class="ss">state: </span><span class="s2">"CA"</span><span class="p">,</span>
+      <span class="ss">postcode: </span><span class="s2">"94103"</span><span class="p">,</span>
+      <span class="ss">country: </span><span class="s2">"US"</span><span class="p">,</span>
+      <span class="ss">email: </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+      <span class="ss">phone: </span><span class="s2">"(555) 555-5555"</span>
+    <span class="p">},</span>
+    <span class="ss">shipping_address: </span><span class="p">{</span>
+      <span class="ss">first_name: </span><span class="s2">"John"</span><span class="p">,</span>
+      <span class="ss">last_name: </span><span class="s2">"Doe"</span><span class="p">,</span>
+      <span class="ss">address_1: </span><span class="s2">"969 Market"</span><span class="p">,</span>
+      <span class="ss">address_2: </span><span class="s2">""</span><span class="p">,</span>
+      <span class="ss">city: </span><span class="s2">"San Francisco"</span><span class="p">,</span>
+      <span class="ss">state: </span><span class="s2">"CA"</span><span class="p">,</span>
+      <span class="ss">postcode: </span><span class="s2">"94103"</span><span class="p">,</span>
+      <span class="ss">country: </span><span class="s2">"US"</span>
+    <span class="p">},</span>
+    <span class="ss">customer_id: </span><span class="mi">2</span><span class="p">,</span>
+    <span class="ss">line_items: </span><span class="p">[</span>
+        <span class="p">{</span>
+          <span class="ss">product_id: </span><span class="mi">546</span><span class="p">,</span>
+          <span class="ss">quantity: </span><span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="ss">product_id: </span><span class="mi">613</span><span class="p">,</span>
+          <span class="ss">quantity: </span><span class="mi">1</span><span class="p">,</span>
+          <span class="ss">variations: </span><span class="p">{</span>
+            <span class="ss">pa_color: </span><span class="s2">"Black"</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="ss">shipping_lines: </span><span class="p">[</span>
+        <span class="p">{</span>
+          <span class="ss">method_id: </span><span class="s2">"flat_rate"</span><span class="p">,</span>
+          <span class="ss">method_title: </span><span class="s2">"Flat Rate"</span><span class="p">,</span>
+          <span class="ss">total: </span><span class="mi">10</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">woocommerce</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="s2">"subscriptions"</span><span class="p">,</span> <span class="n">data</span><span class="p">).</span><span class="nf">parsed_response</span>
+</code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"creating_subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4923</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4923</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-21T02:28:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="s2">"2015-10-21T02:28:42Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_line_items_quantity"</span><span class="w"> </span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cart_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shipping_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"shipping_methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"payment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method_title"</span><span class="p">:</span><span class="s2">"Stripe (Credit Card)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 555-5555"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"view_order_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:example.com</span><span class="se">\/</span><span class="s2">my-account</span><span class="se">\/</span><span class="s2">view-subscription</span><span class="se">\/</span><span class="s2">4923"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7500</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"subtotal_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"tax_class"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly Membership &amp;rarr; Bronze Subscription"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2761</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"meta"</span><span class="p">:[]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"shipping_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7501</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flat_rate"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"tax_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"fee_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"coupon_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-28T23:08:19Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matt@prospress.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allan"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"administrator"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4913"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-20T06:57:36Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"orders_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">481</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_spent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6614.00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https:</span><span class="se">\/\/</span><span class="s2">secure.gravatar.com</span><span class="se">\/</span><span class="s2">avatar</span><span class="se">\/</span><span class="s2">?s=96"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 555-5555"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"billing_schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"period"</span><span class="p">:</span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"start_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-21T02:28:42Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"trial_end_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"next_payment_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-10T08:30:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"end_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"parent_order_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='view-a-subscription'>View A Subscription</h2>
+<p>This API lets you retrieve and view a specific subscription.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>/wc-api/v3/subscriptions/&lt;id&gt;</h6>
+    </div>
+</div>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://example.com/wc-api/v3/subscriptions/4925 <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">WooCommerce</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">subscriptions/4925</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">print</span><span class="p">(</span><span class="n">wcapi</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"subscriptions/4925"</span><span class="p">).</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="n">woocommerce</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"subscriptions/4925"</span><span class="p">).</span><span class="nf">parsed_response</span>
+</code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4938</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">4938</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-21T05:45:28Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-21T05:45:28Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36.00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22.73"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_line_items_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.27"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cart_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.27"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shipping_methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit card (Stripe)"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paid"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postcode"</span><span class="p">:</span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">"(555) 555-5555"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"view_order_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/my-account/view-subscription/4938"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7529</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.64"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtotal_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.36"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.64"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.36"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.64"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tax_class"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monthly Membership &amp;rarr; Gold Membership"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2102</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"meta"</span><span class="p">:[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">7530</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="s2">"9.09"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtotal_tax"</span><span class="p">:</span><span class="s2">"0.91"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="s2">"9.09"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="s2">"0.91"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="s2">"9.09"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quantity"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tax_class"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Colourful Subscription"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"product_id"</span><span class="p">:</span><span class="mi">3456</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sku"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="s2">"pa_colour"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"label"</span><span class="p">:</span><span class="s2">"Colour"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="s2">"Blue"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"shipping_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">7531</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method_id"</span><span class="p">:</span><span class="s2">"flat_rate"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method_title"</span><span class="p">:</span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="s2">"10.00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"tax_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">7532</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rate_id"</span><span class="p">:</span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="s2">"TAX-1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="s2">"Tax"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="s2">"3.27"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"compound"</span><span class="p">:</span><span class="kc">false</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"fee_lines"</span><span class="p">:[],</span><span class="w">
+    </span><span class="nl">"coupon_lines"</span><span class="p">:[],</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="s2">"2014-10-28T23:08:19Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"matt@prospress.com"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"first_name"</span><span class="p">:</span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_name"</span><span class="p">:</span><span class="s2">"Allan"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"username"</span><span class="p">:</span><span class="s2">"matt"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"role"</span><span class="p">:</span><span class="s2">"administrator"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_order_id"</span><span class="p">:</span><span class="s2">"4937"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last_order_date"</span><span class="p">:</span><span class="s2">"2015-10-21T05:45:28Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orders_count"</span><span class="p">:</span><span class="mi">481</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_spent"</span><span class="p">:</span><span class="s2">"6614.00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://secure.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=96"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:</span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_1"</span><span class="p">:</span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postcode"</span><span class="p">:</span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="s2">"(555) 555-5555"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:</span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_1"</span><span class="p">:</span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address_2"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postcode"</span><span class="p">:</span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="s2">"US"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"billing_schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"period"</span><span class="p">:</span><span class="s2">"month"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"interval"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"start_at"</span><span class="p">:</span><span class="s2">"2015-10-21T05:45:28Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trial_end_at"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"next_payment_at"</span><span class="p">:</span><span class="s2">"2015-11-21T05:45:26Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"end_at"</span><span class="p">:</span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"parent_order_id"</span><span class="p">:</span><span class="mi">4937</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='view-list-of-subscriptions'>View List Of Subscriptions</h2>
+<p>This API helps you to view all the subscriptions.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>/wc-api/v3/subscriptions</h6>
+    </div>
+</div>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://example.com/wc-api/v3/subscriptions <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">WooCommerce</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">subscriptions</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">print</span><span class="p">(</span><span class="n">wcapi</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"subscriptions"</span><span class="p">).</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="n">woocommerce</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"subscriptions"</span><span class="p">).</span><span class="nf">parsed_response</span>
+</code></pre></div>
+<blockquote>
+<p>JSON response example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="err">SAME</span><span class="w"> </span><span class="err">AS</span><span class="w"> </span><span class="err">ABOVE</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">RESPONSE</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h4 id='available-filters'>Available Filters</h4>
+<table><thead>
+<tr>
+<th>Filter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Subscriptions by status. eg: <code>active</code> or <code>on-hold</code></td>
+</tr>
+</tbody></table>
+<h2 id='update-a-subscription'>Update A Subscription</h2>
+<p>This API lets you make changes to an Subscription. All fields that can be changed via the API for an order can also be changed on a subscription; with the additional of a few extra fields.
+billing_period, billing_interval, status, start/trial_end/next_payment/end dates can all be modified with this API endpoint</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-put">PUT</i>
+        <h6>/wc-api/v3/subscriptions/&lt;id&gt;</h6>
+    </div>
+</div>
+<h4 id='example-activate-subscription-and-change-start-and-end-dates'>Example: activate subscription and change start and end dates</h4><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PUT https://example.com/wc-api/v3/subscriptions/645 <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+  "subscription" : {
+    "status": "active",
+    "start_date":"2015-10-22 10:12:15",
+    "end_date":"2016-10-22 10:12:15"
+  }
+}'</span>
+<span class="o">}</span><span class="s1">'
+</span></code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">subscription</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">active</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">start_date</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2015-10-22 10:12:15</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">end_date</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2016-10-22 10:12:15</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">WooCommerce</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="dl">'</span><span class="s1">subscriptions/645</span><span class="dl">'</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">"subscription"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"status"</span><span class="p">:</span> <span class="s">"active"</span><span class="p">,</span>
+        <span class="s">"start_date"</span><span class="p">:</span> <span class="s">"2015-10-22 10:12:15"</span><span class="p">,</span>
+        <span class="s">"end_date"</span><span class="p">:</span> <span class="s">"2016-10-22 10:12:15"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">wcapi</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">"subscriptions/645"</span><span class="p">,</span> <span class="n">data</span><span class="p">).</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">subscription: </span><span class="p">{</span>
+      <span class="ss">status: </span><span class="s2">"active"</span><span class="p">,</span>
+      <span class="ss">start_date: </span><span class="s2">"2015-10-22 10:12:15"</span><span class="p">,</span>
+      <span class="ss">end_date: </span><span class="s2">"2016-10-22 10:12:15"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">woocommerce</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="s2">"subscriptions/645"</span><span class="p">,</span> <span class="n">data</span><span class="p">).</span><span class="nf">parsed_response</span>
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="err">SAME</span><span class="w"> </span><span class="err">AS</span><span class="w"> </span><span class="err">ABOVE</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">RESPONSE</span><span class="p">]</span><span class="w">
+</span></code></pre></div><h2 id='get-related-orders-for-a-subscription'>Get related orders for a Subscription</h2>
+<p>This API allows you to get all orders related to a given subscription. In other words,
+this endpoint will get all renewal orders, initial orders and switch orders tied to a subscription and
+return the orders objects in the same format as wc-api.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<div class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>/wc-api/v3/subscriptions/&lt;id&gt;/orders</h6>
+    </div>
+</div>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://example.com/wc-api/v3/subscriptions/5286/orders <span class="se">\</span>
+    <span class="nt">-u</span> consumer_key:consumer_secret
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">WooCommerce</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">subscriptions/5286/orders</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="k">print</span><span class="p">(</span><span class="n">wcapi</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"subscriptions/5286/orders"</span><span class="p">).</span><span class="n">json</span><span class="p">())</span>
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="n">woocommerce</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"subscriptions/5286/orders"</span><span class="p">).</span><span class="nf">parsed_response</span>
+</code></pre></div>
+<blockquote>
+<p>JSON response example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"subscription_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5288</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">5288</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_line_items_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"cart_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"shipping_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"shipping_methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"payment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit card (Stripe)"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 555-5555"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer_user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"view_order_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/my-account/view-order/5288"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7882</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subtotal_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tax_class"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress Product"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5052</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"shipping_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7883</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flat_rate"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"tax_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"fee_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"coupon_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-28T23:08:19Z"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matt@prospress.com"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allan"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matt"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"administrator"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"last_order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7039"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"last_order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"orders_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">508</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"total_spent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6644.00"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 555-5555"</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"order"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5285</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"order_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">5285</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"processing"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUD"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_line_items_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"cart_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"shipping_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"total_discount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"shipping_methods"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"payment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stripe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Credit card (Stripe)"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 555-5555"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer_ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer_user_agent"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"view_order_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/my-account/view-order/5285"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"line_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7882</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subtotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subtotal_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tax_class"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress Product"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5052</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"shipping_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7883</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"method_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flat_rate"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"method_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flat Rate"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"tax_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"fee_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"coupon_lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-10-28T23:08:19Z"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matt@prospress.com"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allan"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matt"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"administrator"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"last_order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7039"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"last_order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-04T06:21:09Z"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"orders_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">508</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"total_spent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6644.00"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"avatar_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 555-5555"</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="nl">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prospress"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"969 Market"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"San Francisco"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94103"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="javascript">Node.js</a>
+                <a href="#" data-language-name="php">PHP</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="ruby">Ruby</a>
+          </div>
+      </div>
+	</div>
+
+
+  </body>
+</html>
