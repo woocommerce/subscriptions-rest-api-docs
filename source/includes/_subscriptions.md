@@ -3876,7 +3876,7 @@ This API returns all available subscription statuses.
 
 <div class="api-endpoint">
   <div class="endpoint-data">
-    <i class="label label-delete">GET</i>
+    <i class="label label-get">GET</i>
     <h6>/wp-json/wc/v3/subscriptions/statuses</h6>
   </div>
 </div>
