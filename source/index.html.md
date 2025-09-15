@@ -20,6 +20,7 @@ includes:
   - authentication
   - subscriptions
   - subscription-orders
+  - order-subscriptions
   - subscription-notes
   - system-status
 
