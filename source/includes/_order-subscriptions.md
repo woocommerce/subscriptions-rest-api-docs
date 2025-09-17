@@ -8,7 +8,7 @@ The order subscriptions API endpoint enables you to view subscriptions related t
 |-----------------|--------|------------------------------------------------------------------------------------------------|
 | `status`        | string | Limit result set to subscriptions assigned a specific status. Options: `pending`, `active`, `on-hold`, `cancelled`, `switched`, `expired`, `pending-cancel` and `trash`. Default is `any`. |
 | `customer`      | integer | Limit result set to subscriptions assigned to a specific customer.                            |
-| `orderby`       | string  | Sort collection by subscription attribute. Options: `id`, `start_date`, `trial_end_date`, `next_payment_date`, `end_date` and `status`. Default is `start_date`. |
+| `orderby`       | string  | Sort collection by object attribute. Options: `date`, `id`, `include`, `title`, `slug` and `modified`. Default is `date`. |
 | `order`         | string  | Order sort attribute ascending or descending. Options: `asc` and `desc`. Default is `desc`.   |
 | `_fields`       | string  | Limit response to specific fields. Expects a comma-separated list of fields.                  |
 
