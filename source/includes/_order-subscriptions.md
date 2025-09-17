@@ -14,7 +14,8 @@ The order subscriptions API endpoint enables you to view subscriptions related t
 
 ## Retrieve order subscriptions ##
 
-This API lets you retrieve and view subscriptions for a specific order.
+This API lets you retrieve and view subscriptions for a specific order. 
+Available since v7.9.0
 
 ### HTTP request ###
 
